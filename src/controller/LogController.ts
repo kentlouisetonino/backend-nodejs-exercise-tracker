@@ -4,12 +4,14 @@ import { ExerciseInterface, ExerciseSchema } from '../model/ExerciseSchema.js'
 import { UserInterface, UserSchema } from '../model/UserSchema.js'
 
 export function GetLogs(req: Request, res: Response) {
+  // * create an instance of user and exercise model
+  const UserModel = mongoose.model<UserInterface>('User', UserSchema)
   const ExerciseModel = mongoose.model<ExerciseInterface>(
     'Exercise',
     ExerciseSchema
   )
-  const UserModel = mongoose.model<UserInterface>('User', UserSchema)
 
+  // * payload
   const _id = req.params._id
   const from = req.query?.from
   const to = req.query?.to

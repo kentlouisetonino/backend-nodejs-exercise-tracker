@@ -19,9 +19,13 @@ export async function GetUsers(_: Request, res: Response) {
 }
 
 export async function CreateUser(req: Request, res: Response) {
+  // create a model based on the user schema
   const UserModel = mongoose.model<UserInterface>('User', UserSchema)
+
+  // * acquire payload
   const username = req.body.username
 
+  // * data to be saved
   const UserModelData = new UserModel({
     username: username,
   })
