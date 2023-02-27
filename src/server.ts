@@ -4,6 +4,7 @@ import express, { json, urlencoded } from 'express'
 import mongoose, { ConnectOptions } from 'mongoose'
 import morgan from 'morgan'
 import HomeRouter from './router/HomeRouter'
+import UserRouter from './router/UserRouter'
 
 const PORT = process.env.PORT
 const MONGODB_URI = process.env.MONGODB_URI
@@ -29,3 +30,4 @@ app.use(express.static('public')) // * http://expressjs.com/en/starter/static-fi
 
 // * endpoints
 app.use('/', HomeRouter)
+app.use('/api', UserRouter)
