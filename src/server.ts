@@ -3,6 +3,7 @@ import cors from 'cors'
 import express, { json, urlencoded } from 'express'
 import mongoose, { ConnectOptions } from 'mongoose'
 import morgan from 'morgan'
+import ExerciseRouter from './router/ExerciseRouter'
 import HomeRouter from './router/HomeRouter'
 import UserRouter from './router/UserRouter'
 
@@ -31,3 +32,4 @@ app.use(express.static('public')) // * http://expressjs.com/en/starter/static-fi
 // * endpoints
 app.use('/', HomeRouter)
 app.use('/api', UserRouter)
+app.use('/api', ExerciseRouter)
