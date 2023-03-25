@@ -35,7 +35,7 @@ export function GetLogs(req: Request, res: Response) {
           }
 
           if (exercises) {
-            const logs = exercises.map((exercise) => {
+            let exerciseLogs = exercises.map((exercise) => {
               return {
                 description: exercise.description,
                 duration: exercise.duration,
@@ -43,11 +43,40 @@ export function GetLogs(req: Request, res: Response) {
               }
             })
 
+            // if (from && to) {
+            //   const fromMilliseconds = new Date(from).getTime()
+            //   const toMilliseconds = new Date(to).getTime()
+
+            //   let newExercises = []
+
+            //   for (let i = 0; i < filteredExercises.length; i++) {
+            //     const dateMilliseconds = new Date(filteredExercises[i].date).getTime()
+
+            //     if (dateMilliseconds >= fromMilliseconds && dateMilliseconds <= toMilliseconds) {
+            //       newExercises.push(filteredExercises[i])
+            //     }
+            //   }
+
+            //   filteredExercises = newExercises
+            // }
+
+            // if (limit) {
+            //   let newExercises = []
+
+            //   for (let i = 0; i < filteredExercises.length; i++) {
+            //     if (newExercises.length <= Number(limit)) {
+            //       newExercises.push(filteredExercises[i])
+            //     }
+            //   }
+
+            //   filteredExercises = newExercises
+            // }
+
             return res.json({
               username: user.username,
               count: exercises.length,
               _id: user.id,
-              log: logs,
+              log: exerciseLogs,
             })
           }
         }
