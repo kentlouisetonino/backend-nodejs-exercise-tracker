@@ -23,6 +23,31 @@ npm run build
 npm run dev
 ```
 
+> - REST API endpoints.
+```bash
+# Create a User
+HTTP METHOD: POST
+URL: http://localhost:14000/api/users
+Body (JSON Raw):
+  { "username": string }
+
+# Get the Users
+HTTP METHOD: POST
+URL: http://localhost:14000/api/users
+
+# Create an Exercise
+HTTP METHOD: POST
+URL: http://localhost:14000/api/users/:_id/exercises
+Param: { _id: "user id" }
+Body (Form Data):
+  { "date": string (optional), "description": string, "duration": number }
+  
+# Get Logs
+HTTP METHOD: GET
+URL: http://localhost:14000/api/users/:_id/logs
+Param: { _id: string }
+```
+
 <br />
 
 ## Recording
