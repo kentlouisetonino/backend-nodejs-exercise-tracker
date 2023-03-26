@@ -27,8 +27,8 @@ mongoose.connect(MONGODB_URI ?? '', {
 app.use(morgan('tiny'))
 app.use(urlencoded({ extended: true }))
 app.use(json())
-app.use(cors({ optionsSuccessStatus: 200 })) // * some legacy browsers choke on 204
-app.use(express.static('public')) // * http://expressjs.com/en/starter/static-files.html
+app.use(cors({ optionsSuccessStatus: 200 }))
+app.use(express.static('public'))
 
 // * endpoints
 app.use('/', HomeRouter)
