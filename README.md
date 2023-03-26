@@ -1,6 +1,6 @@
 ## Description
 
-> A server-side application that allows you to add a user and tracks their exercise progress.
+> A server-side application that allows you to add a user and tracks their exercise progress. This is my final solution of the FreeCodeCampe Exercise Tracker challenge.
 
 <br />
 
