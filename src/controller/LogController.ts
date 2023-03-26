@@ -49,7 +49,7 @@ export function GetLogs(req: Request, res: Response) {
               const fromMilliseconds = Date.parse(String(from))
               const toMilliseconds = Date.parse(String(to))
 
-              let newExercises = []
+              let filteredDateExercises = []
 
               for (let i = 0; i < filteredExercises.length; i++) {
                 const dateMilliseconds = Date.parse(filteredExercises[i].date)
@@ -58,11 +58,11 @@ export function GetLogs(req: Request, res: Response) {
                   dateMilliseconds >= fromMilliseconds &&
                   dateMilliseconds <= toMilliseconds
                 ) {
-                  newExercises.push(filteredExercises[i])
+                  filteredDateExercises.push(filteredExercises[i])
                 }
               }
 
-              filteredExercises = newExercises
+              filteredExercises = filteredDateExercises
             }
 
             // * limit on how many to return
