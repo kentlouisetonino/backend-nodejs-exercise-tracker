@@ -1,6 +1,6 @@
 import { Router } from 'express'
-import { CreateExercise } from '../controller/ExerciseController.js'
-import formData from '../libs/form-data.js'
+import { CreateExercise } from '../controller/ExerciseController'
+import formData from '../libs/form-data'
 
 const router = Router()
 
