@@ -35,7 +35,8 @@ export function GetLogs(req: Request, res: Response) {
           }
 
           if (exercises) {
-            let exerciseLogs = exercises.map((exercise) => {
+            // * map first the required data only
+            let filteredExercises = exercises.map((exercise) => {
               return {
                 description: exercise.description,
                 duration: exercise.duration,
@@ -43,40 +44,43 @@ export function GetLogs(req: Request, res: Response) {
               }
             })
 
-            // if (from && to) {
-            //   const fromMilliseconds = new Date(from).getTime()
-            //   const toMilliseconds = new Date(to).getTime()
+            // * map the data based on from and to date
+            if (from && to) {
+              const fromMilliseconds = Date.parse(String(from))
+              const toMilliseconds = Date.parse(String(to))
 
-            //   let newExercises = []
+              let newExercises = []
 
-            //   for (let i = 0; i < filteredExercises.length; i++) {
-            //     const dateMilliseconds = new Date(filteredExercises[i].date).getTime()
+              for (let i = 0; i < filteredExercises.length; i++) {
+                const dateMilliseconds = Date.parse(filteredExercises[i].date)
 
-            //     if (dateMilliseconds >= fromMilliseconds && dateMilliseconds <= toMilliseconds) {
-            //       newExercises.push(filteredExercises[i])
-            //     }
-            //   }
+                if (
+                  dateMilliseconds >= fromMilliseconds &&
+                  dateMilliseconds <= toMilliseconds
+                ) {
+                  newExercises.push(filteredExercises[i])
+                }
+              }
 
-            //   filteredExercises = newExercises
-            // }
+              filteredExercises = newExercises
+            }
 
-            // if (limit) {
-            //   let newExercises = []
+            // * limit on how many to return
+            if (limit) {
+              let limitedExercises = []
 
-            //   for (let i = 0; i < filteredExercises.length; i++) {
-            //     if (newExercises.length <= Number(limit)) {
-            //       newExercises.push(filteredExercises[i])
-            //     }
-            //   }
+              for (let i = 0; i < Number(limit); i++) {
+                limitedExercises.push(filteredExercises[i])
+              }
 
-            //   filteredExercises = newExercises
-            // }
+              filteredExercises = limitedExercises
+            }
 
             return res.json({
               username: user.username,
-              count: exercises.length,
+              count: filteredExercises.length,
               _id: user.id,
-              log: exerciseLogs,
+              log: filteredExercises ?? [],
             })
           }
         }
