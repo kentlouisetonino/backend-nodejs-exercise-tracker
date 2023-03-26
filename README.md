@@ -26,5 +26,5 @@ npm run dev
 <br />
 
 ## Recording
+[Screencast from Sunday, 26 March, 2023 11:04:47 AM PST.webm](https://user-images.githubusercontent.com/69438999/227753033-82fee816-1c9b-4dc4-98c7-a60b62a525b6.webm)
 
-> - Will follow. Currently in progress.
