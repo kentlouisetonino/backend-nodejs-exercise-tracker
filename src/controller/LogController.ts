@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 import mongoose, { Error } from 'mongoose'
-import { ExerciseInterface, ExerciseSchema } from '../model/ExerciseSchema.js'
-import { UserInterface, UserSchema } from '../model/UserSchema.js'
+import { ExerciseInterface, ExerciseSchema } from '../model/ExerciseSchema'
+import { UserInterface, UserSchema } from '../model/UserSchema'
 
 export function GetLogs(req: Request, res: Response) {
   // * create an instance of user and exercise model
