@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "src/server.ts",
   "repository": "git@github.com:kentlouisetonino/api-exercise-tracker.git",
-  "author": "Kent Louise Tonino <tonino.kentlouise@gmail.com>",
+  "author": "Kent Louise Tonino",
   "license": "MIT",
   "scripts": {
     "build": "tsc --build",
@@ -32,3 +32,4 @@
     "typescript": "^4.9.5"
   }
 }
+
