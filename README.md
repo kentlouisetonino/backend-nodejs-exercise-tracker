@@ -1,8 +1,10 @@
 ## Description
 
-> - A server-side application that allows you to add a user and tracks their exercise progress.
+> - A backend application that allows adding a user and tracks their exercise progress using NodeJS.
 > - This is my final solution of the FreeCodeCampe Exercise Tracker challenge.
 
+<br />
+<br />
 <br />
 
 ## Setup
@@ -25,6 +27,7 @@ npm run dev
 ```
 
 > - REST API endpoints.
+
 ```bash
 # Create a User
 HTTP METHOD: POST
@@ -42,7 +45,7 @@ URL: http://localhost:14000/api/users/:_id/exercises
 Param: { _id: "user id" }
 Body (Form Data):
   { "date": string (optional), "description": string, "duration": number }
-  
+
 # Get Logs
 HTTP METHOD: GET
 URL: http://localhost:14000/api/users/:_id/logs
@@ -50,7 +53,9 @@ Param: { _id: string }
 ```
 
 <br />
+<br />
+<br />
 
-## Recording
+## Testing
+
 [Screencast from Sunday, 26 March, 2023 11:04:47 AM PST.webm](https://user-images.githubusercontent.com/69438999/227753033-82fee816-1c9b-4dc4-98c7-a60b62a525b6.webm)
-
