@@ -1,8 +1,8 @@
 {
-  "name": "api-exercise-tracker",
+  "name": "backend-nodejs-exercise-tracker",
   "version": "1.0.0",
   "main": "src/server.ts",
-  "repository": "git@github.com:kentlouisetonino/api-exercise-tracker.git",
+  "repository": "https://github.com/kentlouisetonino/backend-nodejs-exercise-tracker",
   "author": "Kent Louise Tonino",
   "license": "MIT",
   "scripts": {
@@ -32,4 +32,3 @@
     "typescript": "^4.9.5"
   }
 }
-
