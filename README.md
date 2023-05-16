@@ -2,6 +2,7 @@
 
 > - A backend application that allows adding a user and tracks their exercise progress using NodeJS.
 > - This is my final solution of the FreeCodeCampe Exercise Tracker challenge.
+> - Reference: https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/exercise-tracker
 
 <br />
 <br />
